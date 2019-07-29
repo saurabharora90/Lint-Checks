@@ -1,0 +1,16 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    compileOnly 'com.android.tools.lint:lint-api:26.4.2'
+    compileOnly 'com.android.tools.lint:lint-checks:26.4.2'
+}
+
+jar {
+    manifest {
+        attributes 'Lint-Registry': 'com.saurabharora.darkthemelint.DarkThemeLintRegistry'
+    }
+}
