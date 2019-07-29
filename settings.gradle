@@ -1,0 +1,2 @@
+include ':app', ':dark-theme-lint'
+rootProject.name='CustomLintChecks'
