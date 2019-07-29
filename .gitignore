@@ -1,0 +1,62 @@
+## Project-specific ignores
+coverage/
+
+## OSX ignores
+.DS_Store
+
+## Android ignores
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+out/
+generated/
+scripts/dists/vault/*
+
+# Local configuration file (sdk path, etc)
+local.properties
+local-libs/
+
+## Eclipse ignores
+.project
+.classpath
+.settings
+
+## IntelliJ ignores
+*.iml
+.idea/*
+
+## Misc
+tmp/
+*.swp
+*~
+viki.key
+true/*
+
+## Gradle ignores
+caches/
+daemon/
+native/
+wrapper/
+
+.apt_generated/
+.factorypath
+.gradle/2.2.1/taskArtifacts/*
+/.gradle/
+.gradle
+/captures/
+*/build/
+build/
+/ajcore.*.txt
+*/seeds.txt
+*/unused.txt
+*/class_files.txt
