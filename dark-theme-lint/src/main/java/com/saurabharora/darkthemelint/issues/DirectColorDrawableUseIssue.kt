@@ -9,7 +9,7 @@ object DirectColorDrawableUseIssue {
     const val EXPLANATION =
         "Avoid direct use of colors in XML files. This can cause issues with different theme (dark-theme?) support"
     private val CATEGORY = Category.CORRECTNESS
-    private const val PRIORITY = 6
+    private const val PRIORITY = 4
     private val SEVERITY = Severity.WARNING
 
     val ISSUE = Issue.create(
