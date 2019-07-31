@@ -14,3 +14,5 @@ jar {
         attributes 'Lint-Registry': 'com.saurabharora.darkthemelint.DarkThemeLintRegistry'
     }
 }
+
+apply from: 'publish.gradle'

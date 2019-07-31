@@ -1,0 +1,93 @@
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
+
+version '1.0.0'
+group 'com.saurabharora.lint.checks'
+description 'A collection of helpful lint checks for building and maintaining dark theme apps.'
+
+javadoc {
+    source = sourceSets.main.allJava
+    classpath = configurations.compileClasspath
+
+    options
+            {
+                setMemberLevel JavadocMemberLevel.PUBLIC
+                setAuthor true
+
+                links "https://docs.oracle.com/javase/8/docs/api/"
+            }
+}
+
+task sourceJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allJava
+}
+
+task packageJavadoc(type: Jar) {
+    from javadoc
+    classifier = 'javadoc'
+}
+
+// Create the pom configuration:
+def pomConfig = {
+    licenses {
+        license {
+            name "The Apache Software License, Version 2.0"
+            url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            distribution "repo"
+        }
+    }
+    developers {
+        developer {
+            id "saurabharora90"
+            name "Saurabh Arora"
+            email "saurabharora90@gmail.com"
+        }
+    }
+    scm {
+        url "https://github.com/saurabharora90/Lint-Checks"
+    }
+}
+
+publishing {
+    publications {
+        Production(MavenPublication) {
+            from components.java
+            artifact sourceJar
+            artifact packageJavadoc
+            groupId
+            artifactId 'dark-theme-lint'
+            version this.version
+
+            pom.withXml {
+                def root = asNode()
+                root.appendNode('description', this.description)
+                root.appendNode('name', 'dark-theme-lint')
+                root.children().last() + pomConfig
+            }
+        }
+    }
+}
+
+bintray {
+    user = System.getenv('BINTRAY_USER')
+    key = System.getenv('BINTRAY_API_KEY')
+    publications = ['Production']
+    override = true
+    pkg {
+        repo = 'maven'
+        name = 'dark-theme-lint'
+        description = this.description
+        publish = true
+        publicDownloadNumbers = true
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/saurabharora90/Lint-Checks'
+        dryRun = false
+        version {
+            name = this.version
+            desc = "${this.version}"
+            released = new Date()
+            vcsTag = this.version
+        }
+    }
+}
