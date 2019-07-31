@@ -7,6 +7,7 @@ A collection of Lint Checks to aid with the development and maintenance of dark 
 
 This will warn when colors are hardcoded (eg: `android:textColor="#FFFFFF"`) in layout or drawable files. It will also warn about color resources that don’t have corresponding dark theme (`night` qualifier) variants.
 
+Medium post: https://proandroiddev.com/making-android-lint-theme-aware-6285737b13bc
 
 Usage
 -------
