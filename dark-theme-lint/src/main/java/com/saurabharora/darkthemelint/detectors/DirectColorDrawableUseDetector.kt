@@ -6,20 +6,20 @@ import com.android.tools.lint.detector.api.XmlContext
 import com.saurabharora.darkthemelint.issues.DirectColorUseIssue
 import org.w3c.dom.Attr
 
-private const val BACKGROUND = "background"
-private const val FOREGROUND = "foreground"
-private const val SRC = "src"
-private const val TEXT_COLOR = "textColor"
+//Vector Drawables.
+private const val FILL_COLOR = "fillColor"
+private const val STROKE_COLOR = "strokeColor"
+private const val COLOR = "color"
 private const val TINT = "tint"
 
-class DirectColorUseDetector : ResourceXmlDetector() {
+class DirectColorDrawableUseDetector : ResourceXmlDetector() {
 
     override fun appliesTo(folderType: ResourceFolderType): Boolean {
-        return folderType == ResourceFolderType.LAYOUT
+        return folderType == ResourceFolderType.DRAWABLE || folderType == ResourceFolderType.COLOR
     }
 
     override fun getApplicableAttributes(): Collection<String>? {
-        return listOf(BACKGROUND, FOREGROUND, SRC, TEXT_COLOR, TINT)
+        return listOf(TINT, FILL_COLOR, STROKE_COLOR, COLOR)
     }
 
     override fun visitAttribute(context: XmlContext, attribute: Attr) {
