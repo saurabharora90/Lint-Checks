@@ -3,7 +3,7 @@ package com.saurabharora.darkthemelint.detectors
 import com.android.resources.ResourceFolderType
 import com.android.tools.lint.detector.api.ResourceXmlDetector
 import com.android.tools.lint.detector.api.XmlContext
-import com.saurabharora.darkthemelint.issues.DirectColorUseIssue
+import com.saurabharora.darkthemelint.issues.DirectColorDrawableUseIssue
 import org.w3c.dom.Attr
 
 //Vector Drawables.
@@ -25,9 +25,9 @@ class DirectColorDrawableUseDetector : ResourceXmlDetector() {
     override fun visitAttribute(context: XmlContext, attribute: Attr) {
         if(attribute.value.startsWith("#")) {
             context.report(
-                DirectColorUseIssue.ISSUE,
+                DirectColorDrawableUseIssue.ISSUE,
                 context.getLocation(attribute),
-                DirectColorUseIssue.EXPLANATION)
+                DirectColorDrawableUseIssue.EXPLANATION)
         }
     }
 }
