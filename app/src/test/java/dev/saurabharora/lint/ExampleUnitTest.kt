@@ -1,4 +1,4 @@
-package com.saurabharora.lint
+package dev.saurabharora.lint
 
 import org.junit.Test
 

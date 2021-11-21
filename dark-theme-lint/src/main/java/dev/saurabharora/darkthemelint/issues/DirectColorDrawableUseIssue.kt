@@ -1,8 +1,9 @@
-package com.saurabharora.darkthemelint.issues
+package dev.saurabharora.darkthemelint.issues
 
 import com.android.tools.lint.detector.api.*
-import com.saurabharora.darkthemelint.detectors.DirectColorDrawableUseDetector
+import dev.saurabharora.darkthemelint.detectors.DirectColorDrawableUseDetector
 
+@Suppress("UnstableApiUsage")
 object DirectColorDrawableUseIssue {
     private const val ID = "DirectColorInDrawableUse"
     private const val DESCRIPTION = "Color used directly"

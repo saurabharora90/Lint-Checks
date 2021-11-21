@@ -1,9 +1,9 @@
-package com.saurabharora.darkthemelint.detectors
+package dev.saurabharora.darkthemelint.detectors
 
 import com.android.resources.ResourceFolderType
 import com.android.tools.lint.detector.api.ResourceXmlDetector
 import com.android.tools.lint.detector.api.XmlContext
-import com.saurabharora.darkthemelint.issues.DirectColorDrawableUseIssue
+import dev.saurabharora.darkthemelint.issues.DirectColorDrawableUseIssue
 import org.w3c.dom.Attr
 
 //Vector Drawables.
@@ -12,6 +12,7 @@ private const val STROKE_COLOR = "strokeColor"
 private const val COLOR = "color"
 private const val TINT = "tint"
 
+@Suppress("UnstableApiUsage")
 class DirectColorDrawableUseDetector : ResourceXmlDetector() {
 
     override fun appliesTo(folderType: ResourceFolderType): Boolean {

@@ -1,16 +1,16 @@
-package com.saurabharora.darkthemelint.detectors
+package dev.saurabharora.darkthemelint.detectors
 
 import com.android.resources.ResourceFolderType
 import com.android.tools.lint.detector.api.Context
 import com.android.tools.lint.detector.api.Location
 import com.android.tools.lint.detector.api.ResourceXmlDetector
 import com.android.tools.lint.detector.api.XmlContext
-import com.saurabharora.darkthemelint.issues.MissingNightColorIssue
+import dev.saurabharora.darkthemelint.issues.MissingNightColorIssue
 import org.w3c.dom.Element
 
 private const val COLOR = "color"
 
-
+@Suppress("UnstableApiUsage")
 class MissingNightColorDetector : ResourceXmlDetector() {
 
     private val nightModeColors = mutableListOf<String>()

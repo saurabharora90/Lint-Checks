@@ -1,8 +1,9 @@
-package com.saurabharora.darkthemelint.issues
+package dev.saurabharora.darkthemelint.issues
 
 import com.android.tools.lint.detector.api.*
-import com.saurabharora.darkthemelint.detectors.MissingNightColorDetector
+import dev.saurabharora.darkthemelint.detectors.MissingNightColorDetector
 
+@Suppress("UnstableApiUsage")
 object MissingNightColorIssue {
     private const val ID = "MissingNightColor"
     private const val DESCRIPTION = "Night Color missing"

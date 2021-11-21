@@ -1,4 +1,4 @@
-package com.saurabharora.lint
+package dev.saurabharora.lint
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
