@@ -14,7 +14,7 @@ dependencies {
 
 jar {
     manifest {
-        attributes 'Lint-Registry': 'com.saurabharora.darkthemelint.DarkThemeLintRegistry'
+        attributes 'Lint-Registry': 'dev.saurabharora.darkthemelint.DarkThemeLintRegistry'
     }
 }
 
