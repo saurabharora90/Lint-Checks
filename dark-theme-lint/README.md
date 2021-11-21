@@ -16,7 +16,7 @@ Usage
 
 ```
 dependencies {
-   lintChecks 'com.saurabharora.lint.checks:dark-theme-lint:1.0.0'
+   lintChecks 'dev.saurabharora.lint.checks:dark-theme-lint:2.0.0'
 }
 ```
 
