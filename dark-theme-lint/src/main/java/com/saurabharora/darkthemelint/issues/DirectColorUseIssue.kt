@@ -3,6 +3,7 @@ package com.saurabharora.darkthemelint.issues
 import com.android.tools.lint.detector.api.*
 import com.saurabharora.darkthemelint.detectors.DirectColorUseDetector
 
+@Suppress("UnstableApiUsage")
 object DirectColorUseIssue {
     private const val ID = "DirectColorUse"
     private const val DESCRIPTION = "Color used directly"

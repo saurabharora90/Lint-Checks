@@ -12,6 +12,7 @@ private const val SRC = "src"
 private const val TEXT_COLOR = "textColor"
 private const val TINT = "tint"
 
+@Suppress("UnstableApiUsage")
 class DirectColorUseDetector : ResourceXmlDetector() {
 
     override fun appliesTo(folderType: ResourceFolderType): Boolean {

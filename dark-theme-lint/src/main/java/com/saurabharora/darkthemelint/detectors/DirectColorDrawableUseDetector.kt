@@ -12,6 +12,7 @@ private const val STROKE_COLOR = "strokeColor"
 private const val COLOR = "color"
 private const val TINT = "tint"
 
+@Suppress("UnstableApiUsage")
 class DirectColorDrawableUseDetector : ResourceXmlDetector() {
 
     override fun appliesTo(folderType: ResourceFolderType): Boolean {
