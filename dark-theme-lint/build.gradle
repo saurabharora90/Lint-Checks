@@ -3,10 +3,9 @@ apply plugin: 'kotlin'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    compileOnly 'com.android.tools.lint:lint-api:26.4.2'
-    compileOnly 'com.android.tools.lint:lint-checks:26.4.2'
+    compileOnly 'com.android.tools.lint:lint-api:30.0.3'
+    compileOnly 'com.android.tools.lint:lint-checks:30.0.3'
 }
 
 jar {
